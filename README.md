@@ -1,82 +1,83 @@
-# Secret sharing post-quantique via LWE + stéganographie
+# Post-quantum secret sharing via LWE + steganography
 
-Prototype Java démontrant la combinaison d'un **partage de secret
-post-quantique basé sur LWE** (Learning With Errors, chiffrement de Regev)
-avec la **stéganographie par image** (LSB et DCT) et par **audio** (WAV).
+Java prototype demonstrating the combination of **post-quantum LWE-based
+secret sharing** (Learning With Errors, Regev encryption) with **image
+steganography** (LSB and DCT) and **audio steganography** (WAV).
 
-## Principe
+## Principle
 
-1. Le détenteur génère une paire de clés LWE `(A, b = A·s + e)` ;
-2. Chaque bit du secret est chiffré en LWE (`u = Aᵀx`, `c = b·x + e' + μ·⌊q/2⌋`) ;
-3. La clé secrète `s` est partagée entre `n` participants avec un seuil `k` par
-   un **schéma de Shamir sur le corps premier Z_q** ;
-4. Au moins `k` parts reconstituent `s` (interpolation de Lagrange), puis le
-   déchiffrement LWE (arrondi de `c − ⟨u, s⟩`) révèle le secret.
+1. The holder generates an LWE key pair `(A, b = A·s + e)`;
+2. Each bit of the secret is encrypted with LWE (`u = Aᵀx`, `c = b·x + e' + μ·⌊q/2⌋`);
+3. The secret key `s` is shared among `n` participants with a threshold `k` using
+   a **Shamir scheme over the prime field Z_q**;
+4. At least `k` shares reconstruct `s` (Lagrange interpolation), then LWE
+   decryption (rounding of `c − ⟨u, s⟩`) reveals the secret.
 
-**Sécurité post-quantique** : les chiffrés sont des instances LWE, réputées
-difficiles même pour un adversaire quantique (base des standards NIST PQC) ; les
-parts sont des évaluations de Shamir, à sécurité informationnelle (donc
-post-quantique). Les paramètres `(q, N, M)` sont réduits à but démonstratif.
+**Post-quantum security**: the ciphertexts are LWE instances, believed to be
+hard even for a quantum adversary (the basis of the NIST PQC standards); the
+shares are Shamir evaluations with information-theoretic security (hence
+post-quantum). The parameters `(q, N, M)` are reduced for demonstration
+purposes.
 
-## Contenu
+## Contents
 
-| Fichier | Rôle |
+| File | Role |
 | --- | --- |
-| `LatticeSecretSharing.java` | Génère les parts (Shamir sur Z_q d'une clé LWE) et reconstitue/déchiffre le secret. |
-| `SecretCodec.java` | Convertit les secrets non binaires (texte, codes bancaires, fichiers) en binaire. |
-| `MultiBlockSecretSharing.java` | Partage un secret binaire multi-bloc, bloc par bloc (LWE). |
-| `LSBSteganography.java` | Cache une part dans le bit de poids faible du canal vert (ordre aléatoire via une clé). |
-| `DCTSteganography.java` | Cache une part dans un coefficient DCT d'un bloc 8x8 du canal vert. |
-| `AudioSteganography.java` | Cache une part dans le LSB des échantillons PCM d'un WAV (8/16 bits). |
-| `ImageMetrics.java` | Calcule MSE et PSNR pour évaluer l'impact visuel. |
-| `Main.java` | Programme de démonstration du pipeline image complet. |
-| `Benchmark.java` | Benchmark automatisé : seuil `k`, secrets non binaires, audio et métriques image. |
-| `android/` | Application Android (portage `Bitmap`) et script de build d'APK. |
+| `LatticeSecretSharing.java` | Generates the shares (Shamir over Z_q of an LWE key) and reconstructs/decrypts the secret. |
+| `SecretCodec.java` | Converts non-binary secrets (text, bank codes, files) into binary. |
+| `MultiBlockSecretSharing.java` | Shares a multi-block binary secret, block by block (LWE). |
+| `LSBSteganography.java` | Hides a share in the least significant bit of the green channel (random order via a key). |
+| `DCTSteganography.java` | Hides a share in a DCT coefficient of an 8x8 block of the green channel. |
+| `AudioSteganography.java` | Hides a share in the LSB of PCM samples of a WAV file (8/16-bit). |
+| `ImageMetrics.java` | Computes MSE and PSNR to assess the visual impact. |
+| `Main.java` | Demonstration program of the complete image pipeline. |
+| `Benchmark.java` | Automated benchmark: threshold `k`, non-binary secrets, audio and image metrics. |
+| `android/` | Android application (`Bitmap` port) and APK build script. |
 
-## Prérequis
+## Requirements
 
-- JDK 17 ou plus (`javac` et `java` dans le `PATH`).
+- JDK 17 or later (`javac` and `java` in the `PATH`).
 
-## Compilation et exécution
+## Compilation and execution
 
 ```bash
 javac *.java
-java Main                 # image de couverture synthétique
-java Main chemin/image.png
-java Benchmark            # utilise le répertoire ./images (baboon, cat, lenna, pepper)
-java Benchmark autre/rep  # répertoire d'images optionnel
+java Main                 # synthetic cover image
+java Main path/image.png
+java Benchmark            # uses the ./images directory (baboon, cat, lenna, pepper)
+java Benchmark other/dir  # optional image directory
 ```
 
-Deux images stégo sont écrites : `steg_lsb.png` et `steg_dct.png`.
+Two stego images are written: `steg_lsb.png` and `steg_dct.png`.
 
-## Application Android (APK)
+## Android application (APK)
 
 ```bash
 cd android
-./build.sh                # génère build/MatrixStegoShare.apk
+./build.sh                # generates build/MatrixStegoShare.apk
 adb install build/MatrixStegoShare.apk
 ```
 
-Le build utilise directement les outils du SDK (`aapt2`, `d8`, `zipalign`,
-`apksigner`), sans Gradle. Voir `android/build.sh`.
+The build uses the SDK tools directly (`aapt2`, `d8`, `zipalign`, `apksigner`),
+without Gradle. See `android/build.sh`.
 
-### Parcours utilisateur
+### User flow
 
-1. **Choisir une image** — bouton *Choose image* (`ACTION_OPEN_DOCUMENT`) ou
-   partage d'une photo depuis une autre application (`ACTION_SEND`, `image/*`).
-   L'image est rééchantillonnée à 1600 px et l'orientation EXIF est corrigée.
-2. **Saisir le secret** — texte libre converti en binaire (`SecretCodec`), avec
-   aperçu en direct du nombre de bits et de la taille de part.
-3. **Hide secret in image** — insertion LSB dans le canal vert, puis extraction
-   immédiate de contrôle ; affichage de `PSNR`/`MSE` et d'un badge crypto
-   (clé LWE partagée en 8-of-10 par Shamir, reconstituée à l'identique ✓).
-4. **Save to gallery** — l'image stégo est écrite dans
-   `Pictures/MatrixStegoShare/` via `MediaStore`. *Start over* réinitialise.
+1. **Choose an image** — *Choose image* button (`ACTION_OPEN_DOCUMENT`) or
+   share a photo from another application (`ACTION_SEND`, `image/*`).
+   The image is resampled to 1600 px and the EXIF orientation is corrected.
+2. **Enter the secret** — free text converted to binary (`SecretCodec`), with a
+   live preview of the number of bits and the share size.
+3. **Hide secret in image** — LSB insertion in the green channel, followed by
+   immediate verification extraction; display of `PSNR`/`MSE` and a crypto
+   badge (LWE key shared as 8-of-10 by Shamir, reconstructed identically ✓).
+4. **Save to gallery** — the stego image is written to
+   `Pictures/MatrixStegoShare/` via `MediaStore`. *Start over* resets.
 
-L'interface suit le thème Material (cartes, boutons, icônes vectorielles) et
-fonctionne sans Gradle.
+The interface follows the Material theme (cards, buttons, vector icons) and
+works without Gradle.
 
-## Nettoyage
+## Cleanup
 
 ```bash
 rm -f *.class steg_lsb.png steg_dct.png

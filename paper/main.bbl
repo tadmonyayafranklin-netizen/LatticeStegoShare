@@ -1,0 +1,105 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{avanzi2020}
+Avanzi, R., Bos, J., Ducas, L., Klitz, E., Lepoint, T., Lyubashevsky, V.,
+  Schanck, J.M., Schwabe, P., Seiler, G., Stehl{\'e}, D.: {CRYSTALS-Kyber}:
+  algorithm specifications and supporting documentation. NIST Post-Quantum
+  Cryptography Round 3 Submission  (2020)
+
+\bibitem{bender1996}
+Bender, W., Gruhl, D., Morimoto, N., Lu, A.: Techniques for data hiding. IBM
+  Systems Journal  \textbf{35}(3--4),  313--336 (1996)
+
+\bibitem{bendlin2010}
+Bendlin, R., Damg{\aa}rd, I., Orlandi, C., Zakarias, S.: Semi-homomorphic
+  encryption and multiparty computation. In: Advances in Cryptology ---
+  EUROCRYPT 2010. pp. 169--188. Springer (2010)
+
+\bibitem{blakley1979}
+Blakley, G.R.: Safeguarding cryptographic keys. In: Proceedings of the AFIPS
+  National Computer Conference. pp. 313--317. IEEE (1979)
+
+\bibitem{cachin1998}
+Cachin, C.: An information-theoretic model for steganography. In: Information
+  Hiding. Lecture Notes in Computer Science, vol.~1525, pp. 306--318. Springer
+  (1998)
+
+\bibitem{chan2004}
+Chan, C.K., Cheng, L.M.: Hiding data in images by simple {LSB} substitution.
+  Pattern Recognition  \textbf{37}(3),  469--474 (2004)
+
+\bibitem{desmedt1994}
+Desmedt, Y.: Threshold cryptography. European Transactions on
+  Telecommunications  \textbf{5}(4),  449--458 (1994)
+
+\bibitem{ducas2018}
+Ducas, L., Klitz, E., Lepoint, T., Lyubashevsky, V., Schwabe, P., Seiler, G.,
+  Stehl{\'e}, D.: {CRYSTALS-Dilithium}: a lattice-based digital signature
+  scheme. IACR Transactions on Cryptographic Hardware and Embedded Systems
+  \textbf{2018}(1),  238--268 (2018)
+
+\bibitem{fridrich2009}
+Fridrich, J.: Steganography in Digital Media: Principles, Algorithms, and
+  Applications. Cambridge University Press (2009)
+
+\bibitem{gemmell1997}
+Gemmell, P.: An introduction to threshold cryptography. CryptoBytes
+  \textbf{2}(3),  7--12 (1997)
+
+\bibitem{gentry2008}
+Gentry, C., Peikert, C., Vaikuntanathan, V.: Trapdoors for hard lattices and
+  new cryptographic constructions. In: Proceedings of the 40th Annual ACM
+  Symposium on Theory of Computing (STOC). pp. 197--206. ACM (2008)
+
+\bibitem{johnson1998}
+Johnson, N.F., Jajodia, S.: Exploring steganography: seeing the unseen.
+  Computer  \textbf{31}(2),  26--34 (1998)
+
+\bibitem{micciancio2009}
+Micciancio, D., Regev, O.: Lattice-based cryptography. In: Post-Quantum
+  Cryptography, pp. 147--191. Springer (2009)
+
+\bibitem{nist2024}
+{National Institute of Standards and Technology}: Module-lattice-based
+  key-encapsulation mechanism standard. Federal Information Processing
+  Standards Publication (FIPS) 203 (2024)
+
+\bibitem{peikert2009}
+Peikert, C.: Public-key cryptosystems from the worst-case shortest vector
+  problem. In: Proceedings of the 41st Annual ACM Symposium on Theory of
+  Computing (STOC). pp. 333--342. ACM (2009)
+
+\bibitem{petitcolas1999}
+Petitcolas, F.A.P., Anderson, R.J., Kuhn, M.G.: Information hiding---a survey.
+  Proceedings of the IEEE  \textbf{87}(7),  1062--1078 (1999)
+
+\bibitem{provos2003}
+Provos, N., Honeyman, P.: Hide and seek: an introduction to steganography. IEEE
+  Security \& Privacy  \textbf{1}(3),  32--44 (2003)
+
+\bibitem{regev2005}
+Regev, O.: On lattices, learning with errors, random linear codes, and
+  cryptography. In: Proceedings of the 37th Annual ACM Symposium on Theory of
+  Computing (STOC). pp. 84--93. ACM (2005)
+
+\bibitem{shamir1979}
+Shamir, A.: How to share a secret. Communications of the ACM  \textbf{22}(11),
+  612--613 (1979)
+
+\bibitem{shor1994}
+Shor, P.W.: Algorithms for quantum computation: discrete logarithms and
+  factoring. In: Proceedings of the 35th Annual IEEE Symposium on Foundations
+  of Computer Science (FOCS). pp. 124--134. IEEE (1994)
+
+\bibitem{simmons1984}
+Simmons, G.J.: The prisoners' problem and the subliminal channel. In: Advances
+  in Cryptology --- CRYPTO '83. pp. 51--67. Plenum (1984)
+
+\bibitem{westfeld2001}
+Westfeld, A.: F5---a steganographic algorithm. In: Information Hiding. Lecture
+  Notes in Computer Science, vol.~2137, pp. 289--302. Springer (2001)
+
+\end{thebibliography}

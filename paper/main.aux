@@ -1,0 +1,97 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{shamir1979}
+\citation{blakley1979}
+\citation{shor1994}
+\citation{nist2024,avanzi2020,ducas2018}
+\citation{regev2005,peikert2009,micciancio2009}
+\@writefile{toc}{\contentsline {title}{Securing Lattice-Based Secret Sharing with Steganography: A Post-Quantum Threshold Construction and Empirical Evaluation}{1}{chapter.1}\protected@file@percent }
+\@writefile{toc}{\authcount {1}}
+\@writefile{toc}{\contentsline {author}{TADMON-YAYA Franklin Lenny}{1}{chapter.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Background and Context}{1}{subsection.1.1}\protected@file@percent }
+\citation{simmons1984,cachin1998,provos2003,fridrich2009}
+\citation{bender1996,chan2004}
+\citation{westfeld2001}
+\citation{regev2005,gentry2008}
+\citation{bendlin2010,desmedt1994,gemmell1997}
+\citation{chan2004,westfeld2001,johnson1998,petitcolas1999}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}The Research Gap}{2}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Hypothesis and Objectives}{2}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Materials and Methods}{3}{section.2}\protected@file@percent }
+\newlabel{sec:methods}{{2}{3}{Materials and Methods}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Ethics Statement}{3}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Experimental Design}{3}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Materials and System Specification}{3}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{LWE key generation and encryption.}{3}{section*.2}\protected@file@percent }
+\newlabel{eq:key}{{1}{3}{LWE key generation and encryption}{equation.1}{}}
+\newlabel{eq:enc}{{2}{3}{LWE key generation and encryption}{equation.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces End-to-end pipeline: LWE encryption, Shamir sharing over $\mathbb  {Z}_q$, share serialization, steganographic embedding, and the reverse reconstruction path.}}{4}{figure.1}\protected@file@percent }
+\newlabel{fig:pipeline}{{1}{4}{End-to-end pipeline: LWE encryption, Shamir sharing over $\mathbb {Z}_q$, share serialization, steganographic embedding, and the reverse reconstruction path}{figure.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Threshold key distribution.}{4}{section*.3}\protected@file@percent }
+\newlabel{eq:poly}{{3}{4}{Threshold key distribution}{equation.3}{}}
+\newlabel{eq:lagrange}{{4}{4}{Threshold key distribution}{equation.4}{}}
+\newlabel{eq:dec}{{5}{4}{Threshold key distribution}{equation.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Steganographic channels.}{4}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Data and Statistical Analysis}{4}{subsection.2.4}\protected@file@percent }
+\newlabel{eq:metrics}{{6}{4}{Data and Statistical Analysis}{equation.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Standard test images used as steganographic covers. Each cover was embedded with a serialized share using both the spatial LSB and the frequency-domain DCT channels, and fidelity was measured against the original.}}{5}{figure.2}\protected@file@percent }
+\newlabel{fig:covers}{{2}{5}{Standard test images used as steganographic covers. Each cover was embedded with a serialized share using both the spatial LSB and the frequency-domain DCT channels, and fidelity was measured against the original}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Reproducibility}{5}{subsection.2.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Threshold study for the LWE-based scheme ($n = 10$; secret \texttt  {100100}). Columns report the reconstruction outcome when exactly $k$ shares are supplied and when $k-1$ shares are supplied.}}{6}{table.1}\protected@file@percent }
+\newlabel{tab:threshold}{{1}{6}{Threshold study for the LWE-based scheme ($n = 10$; secret \texttt {100100}). Columns report the reconstruction outcome when exactly $k$ shares are supplied and when $k-1$ shares are supplied}{table.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{6}{section.3}\protected@file@percent }
+\newlabel{sec:results}{{3}{6}{Results}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Threshold Correctness}{6}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Image Fidelity}{6}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Audio and Non-Binary Secrets}{6}{subsection.3.3}\protected@file@percent }
+\citation{bendlin2010,desmedt1994,gemmell1997}
+\citation{regev2005}
+\citation{peikert2009,micciancio2009}
+\citation{shamir1979,blakley1979}
+\citation{nist2024,avanzi2020}
+\citation{chan2004,bender1996}
+\citation{westfeld2001,fridrich2009}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces PSNR (dB) as a function of embedding domain and cover image. LSB achieves approximately $82$--$88~\mathrm  {dB}$, whereas DCT achieves approximately $37$--$39~\mathrm  {dB}$.}}{7}{figure.3}\protected@file@percent }
+\newlabel{fig:psnr}{{3}{7}{PSNR (dB) as a function of embedding domain and cover image. LSB achieves approximately $82$--$88~\mathrm {dB}$, whereas DCT achieves approximately $37$--$39~\mathrm {dB}$}{figure.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Image fidelity for LSB and DCT embedding.}}{7}{table.2}\protected@file@percent }
+\newlabel{tab:fidelity}{{2}{7}{Image fidelity for LSB and DCT embedding}{table.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Discussion}{7}{section.4}\protected@file@percent }
+\newlabel{sec:discussion}{{4}{7}{Discussion}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Interpretation of Key Findings}{7}{subsection.4.1}\protected@file@percent }
+\citation{westfeld2001,fridrich2009}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Comparison with Existing Literature}{8}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Limitations of the Study}{8}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Implications and Future Directions}{8}{subsection.4.4}\protected@file@percent }
+\bibstyle{splncs04}
+\bibdata{refs}
+\bibcite{avanzi2020}{1}
+\bibcite{bender1996}{2}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{9}{section.5}\protected@file@percent }
+\newlabel{sec:conclusion}{{5}{9}{Conclusion}{section.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Acknowledgments.}{9}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Disclosure of Interests.}{9}{section*.8}\protected@file@percent }
+\bibcite{bendlin2010}{3}
+\bibcite{blakley1979}{4}
+\bibcite{cachin1998}{5}
+\bibcite{chan2004}{6}
+\bibcite{desmedt1994}{7}
+\bibcite{ducas2018}{8}
+\bibcite{fridrich2009}{9}
+\bibcite{gemmell1997}{10}
+\bibcite{gentry2008}{11}
+\bibcite{johnson1998}{12}
+\bibcite{micciancio2009}{13}
+\bibcite{nist2024}{14}
+\bibcite{peikert2009}{15}
+\bibcite{petitcolas1999}{16}
+\bibcite{provos2003}{17}
+\bibcite{regev2005}{18}
+\bibcite{shamir1979}{19}
+\bibcite{shor1994}{20}
+\bibcite{simmons1984}{21}
+\bibcite{westfeld2001}{22}
+\gdef \@abspage@last{11}
