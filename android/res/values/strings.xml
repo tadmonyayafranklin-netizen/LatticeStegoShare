@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MatrixStegoShare</string>
+    <string name="app_tagline">Post-quantum secret sharing · image steganography</string>
+
+    <string name="step1_title">Step 1 · Choose a cover image</string>
+    <string name="pick_image">Choose image</string>
+    <string name="cover_hint">Tap “Choose image” to load a photo from your device</string>
+
+    <string name="step2_title">Step 2 · Type the secret to hide</string>
+    <string name="secret_hint">e.g. Meeting at 5pm</string>
+    <string name="bits_empty">0 characters · payload 0 bits</string>
+
+    <string name="hide_secret">Hide secret in image</string>
+    <string name="processing">Embedding the secret, please wait…</string>
+
+    <string name="result_title">Stego image ready</string>
+    <string name="save">Save to gallery</string>
+    <string name="reset">Start over</string>
+
+    <string name="saved_ok">Saved to Pictures / MatrixStegoShare</string>
+    <string name="save_failed">Could not save the image</string>
+    <string name="need_cover">Please choose a cover image first</string>
+    <string name="need_secret">Please type a secret to hide</string>
+    <string name="error_prefix">Could not embed the secret: </string>
+
+    <string name="footer">The secret is hidden in the green channel (LSB) and shielded by an LWE-based, 8-of-10 Shamir threshold, resistant to quantum adversaries.</string>
+</resources>

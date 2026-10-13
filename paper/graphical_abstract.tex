@@ -1,0 +1,58 @@
+%% ---------------------------------------------------------------------------
+%%  Standalone graphical abstract (Elsevier).
+%%  Compile to PDF then rasterize:
+%%      pdflatex graphical_abstract
+%%      pdftoppm -png -r 300 graphical_abstract graphical_abstract
+%% ---------------------------------------------------------------------------
+\documentclass[border=6pt]{standalone}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+
+\begin{document}
+\begin{tikzpicture}[
+  node distance=7mm and 9mm,
+  every node/.style={font=\small},
+  box/.style={draw, rounded corners, align=center, minimum height=10mm,
+              inner sep=4pt, fill=blue!6, line width=0.6pt},
+  op/.style={draw, align=center, minimum height=10mm, inner sep=4pt,
+             fill=orange!12, line width=0.6pt},
+  ar/.style={-{Latex[length=2.4mm]}, thick, draw=black!70}
+]
+
+%% --- Forward path (dealer -> cover media) -------------------------------
+\node[box] (secret) {Dealer secret\\$\mu_1\dots\mu_L$};
+\node[op, right=of secret] (enc) {LWE encryption\\$\mathbf{b}=\mathbf{A}\mathbf{s}+\mathbf{e}$};
+\node[op, right=of enc] (shamir) {Shamir sharing\\over $\mathbb{Z}_q$};
+\node[op, right=of shamir] (ser) {Share\\serialization};
+\node[box, right=of ser] (stego) {Steganographic\\embedding (LSB/DCT)};
+\node[box, right=of stego] (media) {Cover media\\images / audio};
+
+\draw[ar] (secret) -- (enc);
+\draw[ar] (enc) -- (shamir);
+\draw[ar] (shamir) -- (ser);
+\draw[ar] (ser) -- (stego);
+\draw[ar] (stego) -- (media);
+
+%% --- Return path (cover media -> recovered secret) ----------------------
+\node[op, below=12mm of media] (ext) {Extraction};
+\node[op, left=of ext] (deser) {Deserialization};
+\node[op, left=of deser] (rec) {Lagrange + LWE\\decryption ($\ge k$)};
+\node[box, left=of rec] (plain) {Recovered secret\\$\mu_1\dots\mu_L$};
+
+\draw[ar] (media) -- (ext);
+\draw[ar] (ext) -- (deser);
+\draw[ar] (deser) -- (rec);
+\draw[ar] (rec) -- (plain);
+
+%% --- Annotations --------------------------------------------------------
+\node[align=center, font=\footnotesize, below=6mm of ser, text=black!65]
+  {post-quantum threshold\\$k$-of-$n$ recovery};
+\node[align=center, font=\footnotesize, above=6mm of stego, text=black!65]
+  {share hidden in\\cover medium};
+
+\end{tikzpicture}
+\end{document}

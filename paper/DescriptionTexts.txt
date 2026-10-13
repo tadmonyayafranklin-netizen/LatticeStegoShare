@@ -1,0 +1,3 @@
+1 (Fig. 1) - End-to-end pipeline diagram: LWE encryption, Shamir sharing over $\mathbb {Z}_q$, share serialization, steganographic embedding, and the reverse reconstruction path.
+2 (Fig. 2) - Four standard test images used as steganographic covers: Baboon, Cat, Lenna, and Pepper.
+3 (Fig. 3) - Bar chart of PSNR in dB for LSB and DCT embedding across Baboon, Cat, Lenna, Pepper, and a synthetic cover.

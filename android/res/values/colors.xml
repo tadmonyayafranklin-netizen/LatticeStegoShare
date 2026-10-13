@@ -1,0 +1,16 @@
+<resources>
+    <color name="primary">#2563EB</color>
+    <color name="primaryDark">#1E3A8A</color>
+    <color name="accent">#7C3AED</color>
+    <color name="surface">#F4F6FB</color>
+    <color name="card">#FFFFFF</color>
+    <color name="textPrimary">#0F172A</color>
+    <color name="textSecondary">#64748B</color>
+    <color name="border">#E2E8F0</color>
+    <color name="successText">#15803D</color>
+    <color name="successBg">#DCFCE7</color>
+    <color name="chipBg">#EEF2FF</color>
+    <color name="headerStart">#4C1D95</color>
+    <color name="headerEnd">#2563EB</color>
+    <color name="ic_launcher_background">#2563EB</color>
+</resources>

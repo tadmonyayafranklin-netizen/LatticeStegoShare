@@ -1,0 +1,7 @@
+Highlights
+
+- Post-quantum threshold secret sharing built on Learning With Errors (LWE).
+- LWE secret key is Shamir-shared over Z_q; shares are steganographically hidden.
+- LSB embedding reached 82-88 dB PSNR; DCT embedding reached 37-39 dB.
+- Exact k-of-n reconstruction verified for k=2..10; k-1 shares reveal nothing.
+- Audio PCM LSB transport yielded MSE near 8e-3 with exact recovery.
